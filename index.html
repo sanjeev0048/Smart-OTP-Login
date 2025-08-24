@@ -1,0 +1,84 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Smart-OTP-Login</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+        <div class="logo">
+            <h1>🔐 SecureLogin</h1>
+            <p>Smart OTP Authentication</p>
+        </div>
+
+        <!-- Step 1: Enter Email/Phone -->
+        <div class="step active" id="step1">
+            <div class="form-group">
+                <label>Choose delivery method:</label>
+                <div class="delivery-method">
+                    <button class="method-btn active" data-method="email">📧 Email</button>
+                    <button class="method-btn" data-method="sms">📱 SMS</button>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="contact" id="contactLabel">Email Address</label>
+                <input type="email" id="contact" placeholder="Enter your email address" required>
+            </div>
+            
+            <button class="btn" id="sendOtpBtn">
+                <span class="spinner"></span>
+                <span class="btn-text">Send OTP</span>
+            </button>
+        </div>
+
+        <!-- Step 2: Enter OTP -->
+        <div class="step" id="step2">
+            <button class="back-btn" id="backBtn">← Back</button>
+            
+            <div id="message"></div>
+            
+            <div class="form-group">
+                <label>Enter 6-digit OTP</label>
+                <p style="color: #666; font-size: 14px; margin-bottom: 15px;">
+                    Code sent to <span id="sentTo"></span>
+                </p>
+                <div class="otp-container">
+                    <input type="text" class="otp-input" maxlength="1" data-index="0">
+                    <input type="text" class="otp-input" maxlength="1" data-index="1">
+                    <input type="text" class="otp-input" maxlength="1" data-index="2">
+                    <input type="text" class="otp-input" maxlength="1" data-index="3">
+                    <input type="text" class="otp-input" maxlength="1" data-index="4">
+                    <input type="text" class="otp-input" maxlength="1" data-index="5">
+                </div>
+            </div>
+            
+            <button class="btn" id="verifyOtpBtn">
+                <span class="spinner"></span>
+                <span class="btn-text">Verify OTP</span>
+            </button>
+            
+            <div class="resend-container">
+                <p class="timer" id="timer">Resend OTP in <span id="countdown">60</span>s</p>
+                <a href="#" class="resend-btn disabled" id="resendBtn">Resend OTP</a>
+            </div>
+        </div>
+
+        <!-- Step 3: Success -->
+        <div class="step" id="step3">
+            <div class="success">
+                <h3>✅ Login Successful!</h3>
+                <p>Welcome back! You've been successfully authenticated.</p>
+            </div>
+            <button class="btn" onclick="location.reload()">Login Again</button>
+        </div>
+    </div>
+
+
+       <script src="script.js"></script> 
+    </body>
+    </html>
+</head>
