@@ -44,6 +44,3 @@ Keep OTP short-lived (1–2 mins)
 
 Limit resend attempts to prevent abuse
 
-Do you want me to also include a sample folder structure with code snippets in the README so it’s easier for anyone to run?
-
-Do you like this personality?
